@@ -1,0 +1,29 @@
+<% include ../partials/header %>
+
+	<div class="container browse-container">
+		<div class="container">
+			<div class="title-browse">
+				<p>Quizzes</p>
+			</div>
+			<div class="row">
+				<% quizzes.forEach(function(quiz){ %>
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="thumbnail">
+							<div class="img-container">
+								<img class="quiz-img" src="../../img/<%= quiz.image %>.jpg">
+							</div>
+							<div class="caption">
+								<h4 class="quiz-name"><%= quiz.name %></h4>
+								<p>Created by <%= quiz.creator.username %></p>
+								<div class="btn-align">
+									<button class="btn btn-primary">Take Quiz</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+		</div>
+	</div>
+	
+<% include ../partials/footer %>
