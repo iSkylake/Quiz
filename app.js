@@ -16,7 +16,7 @@ var indexRoutes = require("./routes/index"),
 mongoose.Promise = global.Promise; // Used to debug mpromise deprecation
 mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/quiz");
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 

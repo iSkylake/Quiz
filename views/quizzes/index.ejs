@@ -16,7 +16,7 @@
 								<h4 class="quiz-name"><%= quiz.name %></h4>
 								<p>Created by <%= quiz.creator.username %></p>
 								<div class="btn-align">
-									<button class="btn btn-primary">Take Quiz</button>
+									<a href="/quizzes/<%= quiz.id %>"><button class="btn btn-primary">Take Quiz</button></a>
 								</div>
 							</div>
 						</div>

@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+	<div class="container">
+		<div class="row">
+			<div class="new-form">
+				<form action="/quizzes/<%= quiz._id %>/score" method="POST">
+					<% console.log(quiz._id) %>
+					<h1 class="question-title new-h1"><%= quiz.name %></h1>
+					<div class="form-group">
+						<% var questionNumber = 1 %>
+						<% var answerNumber = 0 %>
+						<% quiz.questions.forEach(function(question){ %>
+							<% console.log(question.answer) %>
+							<p class="question"><%= questionNumber%>) <%= question.question %></p>
+							<% question.answer.sort(function(){ %>
+							<%	return .5 - Math.random(); %>
+							<% }); %>
+							<% questionNumber++ %>
+							<% question.answer.forEach(function(option){ %>
+								<input type="radio" name=answer[<%= answerNumber %>] value="<%= option %>" required>   <span class="option"><%= option %></span><br>
+							<% }); %>
+							<% answerNumber++; %>
+						<% }); %>	
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary btn-lg submit-answer">Submit</button>
+					</div>
+				</form>
+		</div>
+	</div>
+
+<% include ../partials/footer %>

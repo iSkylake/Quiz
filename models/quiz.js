@@ -9,7 +9,13 @@ var quizSchema = new mongoose.Schema({
 			ref: "User"
 		},
 		username: String
-	}
+	},
+	questions: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Question"
+		}
+	]
 });
 
 module.exports = mongoose.model("Quiz", quizSchema);
