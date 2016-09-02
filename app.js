@@ -11,7 +11,8 @@ var User = require("./models/user");
 
 // Routes
 var indexRoutes = require("./routes/index"),
-	quizzesRoutes = require("./routes/quizzes");
+	quizzesRoutes = require("./routes/quizzes"),
+	questionRoutes = require("./routes/question");
 
 mongoose.Promise = global.Promise; // Used to debug mpromise deprecation
 mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/quiz");
@@ -38,6 +39,7 @@ app.use(function(req, res, next){
 
 app.use(indexRoutes);
 app.use("/quizzes", quizzesRoutes);
+app.use("/quizzes/:id", questionRoutes);
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("Server Started");

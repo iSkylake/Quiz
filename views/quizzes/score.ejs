@@ -3,8 +3,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="score-form">
-				<h1 class="question-title new-h1">SCORE</h1>
-				<h1 class="question-title new-h1 score-display"><%= score %></h1>
+				<div form-group>
+					<h1 class="question-title new-h1">FINAL SCORE</h1>
+					<h1 class="question-title new-h1 score-display"><%= score %>%</h1>
+					<h1 class="question-title new-h1 score-description">You got: <%= correct %> / <%= totalQuestion %></h1>					
+		            <div class="form-group">
+		            	<a href="/quizzes/<%= quizId %>"><button class="btn btn-lg btn-primary btn-block">Try Again</button></a>
+		            </div>
+		            <div class="form-group">
+		            	<a href="/quizzes"><button class="btn btn-lg btn-success btn-block nounderline">More Quizzes</button></a>
+		            </div>	
+				</div>
 			</div>
 		</div>
 	</div>

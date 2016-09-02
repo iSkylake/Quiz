@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="new-form">
-				<h1 class="login-h1 new-h1">New Question</h1>
+				<h1 class="login-h1 new-h1">Write New Question</h1>
 				<form action="/quizzes/<%= quiz._id %>/questions" method="POST">
 				<div class="form-group">
 					<input class="form-control" type="text" name="question" placeholder="Write a question" required>
@@ -26,7 +26,9 @@
                 	<button class="btn btn-lg btn-primary btn-block">Submit</button>
                 </div>			
 				</form>
-				<a href="/quizzes">Go Back</a>
+                <div class="form-group">
+                	<a href="/quizzes"><button class="btn btn-lg btn-success btn-block">Finish</button></a>
+                </div>
 			</div>
 		</div>
 	</div>

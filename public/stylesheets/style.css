@@ -261,7 +261,7 @@ li>a:focus{
 }
 
 .score-form{
-	width: 25%;
+	width: 40%;
 	margin: 25px auto;
 	background-color: #fff;
 	padding: 50px;
@@ -270,8 +270,19 @@ li>a:focus{
 
 .score-display{
 	font-size: 36px;
+	/*color: #959696;*/
+	color: #00b300;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-weight: 700;	
+}
+
+.score-description{
+	font-size: 36px;
 	color: #959696;
 	margin-top: 20px;
 	margin-bottom: 30px;
 	font-weight: 700;	
 }
+
+.nounderline{text-decoration: none}
