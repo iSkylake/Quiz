@@ -4,6 +4,7 @@ var express = require("express"),
 	methodOverride = require("method-override"),
 	passport = require("passport"),
 	localStrategy = require("passport-local"),
+	flash = require("connect-flash"),
 	app = express();
 
 // DB Models
@@ -20,6 +21,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
+app.use(flash());
 
 app.use(require("express-session")({
 	secret: "Some random text for secret",
