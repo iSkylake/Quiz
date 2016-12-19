@@ -3,6 +3,7 @@ var express = require("express"),
 	Quiz = require("../models/quiz"),
 	Question = require("../models/question");
 
+// Show question form
 router.get("/questions/new", function(req, res){
 	Quiz.findById(req.params.id, function(err, quiz){
 		if(err){
@@ -13,6 +14,7 @@ router.get("/questions/new", function(req, res){
 	});
 });
 
+// Add question
 router.post("/questions", function(req, res){
 	Quiz.findById(req.params.id, function(err, quiz){
 		if(err){

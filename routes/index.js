@@ -4,18 +4,22 @@ var express = require("express"),
 
 var User = require("../models/user");
 
+// Landing page
 router.get("/", function(req, res){
 	res.render("landing");
 })
 
+// Login page
 router.get("/login", function(req, res){
 	res.render("login");
 });
 
+// Sign up page
 router.get("/register", function(req, res){
 	res.render("register");
 });
 
+// Create account
 router.post("/register", function(req, res){
 	var newUser = new User({username: req.body.username});
 	User.register(newUser, req.body.password, function(err, user){
@@ -29,6 +33,7 @@ router.post("/register", function(req, res){
 	});
 });
 
+// Login
 router.post("/login", passport.authenticate("local",
 	{
 		successRedirect: "/",
@@ -36,6 +41,7 @@ router.post("/login", passport.authenticate("local",
 	}), function(req, res){
 });
 
+// Logout
 router.get("/logout", function(req, res){
 	req.logout();
 	// req.flash("success", "Successfully logged out");

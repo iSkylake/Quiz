@@ -4,6 +4,7 @@ var express = require("express"),
 	Question = require("../models/question"),
 	middleware = require("../middleware");
 
+// Show all quizzes
 router.get("/", function(req, res){
 	Quiz.find({}, function(err, quizzes){
 		if(err){
@@ -18,6 +19,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 	res.render("quizzes/new");
 });
 
+// Create new quiz
 router.post("/", function(req, res){
 	var name = req.body.name;
 	var image = req.body.category;
@@ -36,6 +38,7 @@ router.post("/", function(req, res){
 	});
 });
 
+// Show quiz
 router.get("/:id", function(req, res){
 	Quiz.findById(req.params.id).populate("questions").exec(function(err, quiz){
 		if(err){
@@ -46,6 +49,7 @@ router.get("/:id", function(req, res){
 	});
 });
 
+// Post route to calculate score
 router.post("/:id/score", function(req, res){
 	Quiz.findById(req.params.id).populate("questions").exec(function(err, quiz){
 		if(err){
