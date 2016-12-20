@@ -13,3 +13,7 @@ Future features:
 - Profile page for the user
 - Update functionality to modify the quiz
 - Delete functionality to delete the quiz
+- Refactor quizzes (show 1 question)
+- Redesign UI/UX
+- Move to React
+- Add statistics
