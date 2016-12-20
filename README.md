@@ -9,7 +9,7 @@ This is a quiz web app where:
 - Others can solve the quiz and see their score
 
 Future features:
-- Flash messages for error
+- ~~Flash messages for error handling~~
 - Profile page for the user
 - Update functionality to modify the quiz
 - Delete functionality to delete the quiz
