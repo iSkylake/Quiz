@@ -6,7 +6,7 @@ var User = require("../models/user");
 
 // Landing page
 router.get("/", function(req, res){
-	res.render("landing");
+	res.render("newlanding");
 })
 
 // Login page

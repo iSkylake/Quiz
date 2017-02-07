@@ -287,6 +287,11 @@ li>a:focus{
 
 .nounderline{text-decoration: none}
 
+#landing{
+	background-color: #000;
+	height: 100vh;
+}
+
 .slideshow { 
   position: fixed;
   width: 100%;
@@ -310,4 +315,41 @@ li>a:focus{
   background-repeat: no-repeat;
   opacity: 0;
   animation: slideAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(../img/college.jpg); 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(../img/development.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(../img/equipment.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(../img/glasses.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(../img/workstation.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes slideAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
 }
